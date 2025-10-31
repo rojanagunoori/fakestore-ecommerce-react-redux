@@ -1,70 +1,162 @@
-# Getting Started with Create React App
+# 🛒 FakeStore E-Commerce App (React + Redux)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## 📸 Screenshots
 
-In the project directory, you can run:
+![Photo](/public/screenshots/photo-1.png)
 
-### `npm start`
+![Photo](/public/screenshots/photo-2.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![Photo](/public/screenshots/photo-3.png)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![Photo](/public/screenshots/photo-4.png)
 
-### `npm test`
+![Photo](/public/screenshots/photo-5.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+A modern, responsive e-commerce web app built with **React**, **Redux Toolkit**, and the **FakeStore API**.  
+It allows users to browse products, view details, add items to the cart, and manage authentication — all in one smooth UI.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🌐 Live Demo
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+🚀 **Live Site:** [https://fakestore-ecommerce-react-redux.netlify.app](https://fakestore-ecommerce-react-redux.netlify.app)
 
-### `npm run eject`
+💻 **GitHub Repository:** [https://github.com/rojanagunoori/fakestore-ecommerce-react-redux](https://github.com/rojanagunoori/fakestore-ecommerce-react-redux)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## ✨ Features
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- 🧍 User authentication (login/logout)
+- 🛍️ Browse products by category (Men, Women, Electronics, Jewelery)
+- 🔍 View detailed product pages
+- 🛒 Add/remove items from cart
+- ⚙️ Global state management with Redux Toolkit
+- 💬 Toast notifications (React Toastify)
+- 🎠 Hero section with Swiper.js carousel
+- 💅 SCSS module-based styling
+- 🧭 Routing via React Router v6
+- 📱 Fully responsive layout
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## 🧩 Tech Stack
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+| Category | Technologies |
+|-----------|---------------|
+| **Frontend** | React (CRA) |
+| **State Management** | Redux Toolkit |
+| **Routing** | React Router DOM |
+| **Styling** | SCSS Modules |
+| **Notifications** | React Toastify |
+| **Carousel** | Swiper.js |
+| **API** | [FakeStore API](https://fakestoreapi.com/) |
+| **Deployment** | Netlify |
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+## 🌐 API Integration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+This project uses the **[FakeStore API](https://fakestoreapi.com/)** to fetch products, categories, and user data.
 
-### Analyzing the Bundle Size
+### 🔹 Example Endpoints
+- 🛍️ `https://fakestoreapi.com/products` — fetch all products  
+- 👕 `https://fakestoreapi.com/products/category/men's clothing` — fetch products by category  
+- 👩‍💼 `https://fakestoreapi.com/users` — fetch user details  
+- 🔐 `https://fakestoreapi.com/auth/login` — authenticate user
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### 🔹 Example Code (in Redux Thunk)
+```js
+export const fetchProducts = createAsyncThunk("products/fetch", async () => {
+  const response = await fetch("https://fakestoreapi.com/products");
+  const data = await response.json();
+  return data;
+});
+```
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## ⚙️ Setup Instructions
 
-### Advanced Configuration
+### 1️⃣ Clone the repository
+```bash
+git clone https://github.com/rojanagunoori/fakestore-ecommerce-react-redux.git
+cd fakestore-ecommerce-react-redux
+```
+2️⃣ Install dependencies
+```bash
+npm install
+```
+3️⃣ Start the development server
+```bash
+npm start
+```
+4️⃣ Build for production
+```bash
+npm run build
+```
+## 🧱 Folder Structure
+```bash
+src/
+ ├── app/
+ │    └── store.js
+ ├── components/
+ │    ├── components/
+ │    └── layouts/
+ ├── features/
+ │    ├── auth/
+ │    ├── cart/
+ │    └── product/
+ ├── pages/
+ │    ├── Home/
+ │    ├── Catalog/
+ │    ├── Product/
+ │    ├── Cart/
+ │    └── Login/
+ ├── routes/
+ │    └── Routes.js
+ ├── data/
+ │    └── images.js
+ ├── App.js
+ ├── index.js
+ └── index.scss
+ ```
+## ☁️ Deployment (Netlify)
+### Live URL:
+🔗 https://fakestore-ecommerce-react-redux.netlify.app
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Build Settings:
 
-### Deployment
+| Setting               | Value           |
+| --------------------- | --------------- |
+| **Build Command**     | `npm run build` |
+| **Publish Directory** | `build`         |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
+## 🧑‍💻 Author
+👩‍💻 Roja nagunoori
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+🔗 GitHub Profile: [https://github.com/rojanagunoori/fakestore-ecommerce-react-redux](https://github.com/rojanagunoori/fakestore-ecommerce-react-redux)
+
+📧 Email: nagunooriroja@gmail.com
+
+## 🤝 Contributing
+Contributions are welcome! 🎉
+To contribute:
+
+Fork this repository
+
+Create a new branch (git checkout -b feature-name)
+
+Commit your changes (git commit -m "Add new feature")
+
+Push to the branch (git push origin feature-name)
+
+Open a Pull Request
+
+## 📜 License
+This project is licensed under the MIT License — feel free to use and modify it.
+
+## ⭐ If you like this project, don’t forget to give it a star on GitHub!
